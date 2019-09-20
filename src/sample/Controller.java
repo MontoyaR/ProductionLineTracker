@@ -11,9 +11,11 @@ public class Controller {
 
   @FXML
   void Println(MouseEvent event) {
-
     System.out.println("Printing to console.");
-
   }
 
+  @FXML
+  void addProduct(MouseEvent event) {
+    System.out.println("Printing to console.");
+  }
 }

@@ -28,16 +28,13 @@ public class Main extends Application {
 
     initializeDB();
 
-
     Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
     primaryStage.setTitle("Production Line Tracker");
-    primaryStage.setScene(new Scene(root, 600, 400));
+    primaryStage.setScene(new Scene(root, 800, 550));
     primaryStage.show();
-
-
   }
 
-  public void initializeDB(){
+  public void initializeDB() {
 
     final String JDBC_DRIVER = "org.h2.Driver";
     final String DB_URL = "jdbc:h2:./res/HR";
@@ -75,7 +72,6 @@ public class Main extends Application {
       e.printStackTrace();
     }
   }
-
 
   public static void main(String[] args) {
     launch(args);

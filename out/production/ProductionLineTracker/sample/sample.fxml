@@ -70,7 +70,7 @@
                 <Button layoutX="149.0" layoutY="370.0" mnemonicParsing="false" onMouseClicked="#Println" text="Record Production" />
                         <ListView layoutX="72.0" layoutY="67.0" prefHeight="284.0" prefWidth="297.0" />
                         <Label layoutX="168.0" layoutY="34.0" text="Choose Product" />
-                        <ComboBox layoutX="438.0" layoutY="209.0" prefWidth="150.0" />
+                        <ComboBox fx:id="combobox" layoutX="438.0" layoutY="209.0" prefWidth="150.0" />
                         <Label layoutX="458.0" layoutY="171.0" text="Choose Quantity" />
               </children>
             </AnchorPane>

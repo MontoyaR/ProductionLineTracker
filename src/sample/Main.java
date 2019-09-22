@@ -34,6 +34,10 @@ public class Main extends Application {
     primaryStage.show();
   }
 
+  /**
+   * Initializes the database and connects to it .
+   * @return void.
+   */
   public void initializeDB() {
 
     final String JDBC_DRIVER = "org.h2.Driver";

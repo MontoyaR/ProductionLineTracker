@@ -10,11 +10,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * Handles mouse and keyboard events.
+ * @author Ricardo Montoya
+ */
 public class Controller implements Initializable {
 
   @FXML
   private Button btnPrint;
-
 
   @FXML
   void Println(MouseEvent event) {

@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 
 /**
  * Handles mouse and keyboard events.
+ *
  * @author Ricardo Montoya
  */
 public class Controller implements Initializable {
@@ -27,7 +28,6 @@ public class Controller implements Initializable {
   @FXML
   void addProduct(MouseEvent event) {
 
-    System.out.println("Printing to console.");
   }
 
   @FXML
@@ -38,6 +38,7 @@ public class Controller implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     combobox.setItems(list);
-
+    combobox.setEditable(true);
+    combobox.getSelectionModel().selectFirst();
   }
 }

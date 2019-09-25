@@ -19,9 +19,8 @@ public class Main extends Application {
 
   /**
    * The starting point of a JavaFX program.
-   *
    * @param primaryStage the first thing a user sees.
-   * @throws Exception errors found within code
+   * @throws Exception errors found within code.
    */
   @Override
   public void start(Stage primaryStage) throws Exception {
@@ -46,6 +45,8 @@ public class Main extends Application {
     //  Database credentials
     final String USER = "";
     final String PASS = "";
+
+    // Class:Connection Object:conn
     Connection conn = null;
     Statement stmt = null;
 
@@ -59,7 +60,7 @@ public class Main extends Application {
       //STEP 3: Execute a query
       stmt = conn.createStatement();
 
-      String sql = "SELECT * FROM PRODUCT";
+      String sql = "SELECT NAME FROM PRODUCT";
 
       ResultSet rs = stmt.executeQuery(sql);
       while (rs.next()) {
@@ -67,6 +68,7 @@ public class Main extends Application {
       }
 
       // STEP 4: Clean-up environment
+      rs.close();
       stmt.close();
       conn.close();
     } catch (ClassNotFoundException e) {
@@ -76,6 +78,7 @@ public class Main extends Application {
       e.printStackTrace();
     }
   }
+
 
   public static void main(String[] args) {
     launch(args);

@@ -2,6 +2,7 @@ package sample;
 
 import java.net.URL;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +12,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
+import java.sql.Connection;
+
+
 
 /**
  * Handles mouse and keyboard events.
@@ -25,8 +29,18 @@ public class Controller implements Initializable {
   }
 
   @FXML
-  void addProduct(MouseEvent event) {
-    String sqlAddProduct = "INSERT INTO Product(type, manufacturer, name) VALUES ( 'AUDIO', 'Apple', 'iPod' )";
+  void addiPodProduct(MouseEvent event) {
+    String selectStmt = "INSERT INTO Product(type, manufacturer, name) VALUES ( 'AUDIO', 'Apple', 'iPod' )";
+    try {
+      DBUtil.dbExecuteUpdate(selectStmt);
+    } catch (SQLException | ClassNotFoundException e){
+      System.out.println(e);
+    }
+  }
+
+  @FXML
+  void addProduct(MouseEvent event){
+
   }
 
   @FXML
@@ -37,13 +51,6 @@ public class Controller implements Initializable {
   @FXML
   public ChoiceBox<ItemType> chbxItemType;
 
-  /**
-   * Called to initialize a controller after its root element has been
-   * completely processed.
-   *
-   * @param location
-   * @param resources
-   */
   @Override
   public void initialize(URL location, ResourceBundle resources) {
 

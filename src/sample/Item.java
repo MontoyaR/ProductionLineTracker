@@ -2,10 +2,10 @@ package sample;
 
 public interface Item {
 
-  void getId();
+  int getId();
   void setName(String name);
-  void getName();
+  String getName();
   void setManufacturer(String manufacturer);
-  void getManufacturer();
+  String getManufacturer();
 
 }

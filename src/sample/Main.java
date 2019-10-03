@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.Product.Widget;
 
 /**
  * The starting point of the program.
@@ -34,7 +35,14 @@ public class Main extends Application {
   }
 
   public static void main(String[] args) {
+
     launch(args);
+
+    Product product1 = new Widget("iPod", "Apple", "AM");
+    System.out.println(product1.toString());
+
+    Product product2 = new Widget("Zune", "Microsoft", "AM");
+    System.out.println(product2.toString());
+
   }
-  //
 }

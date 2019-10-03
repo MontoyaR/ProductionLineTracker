@@ -3,27 +3,45 @@ package sample;
 public abstract class Product implements Item {
 
   private int Id;
-  private String type;
-  private String manufacturer;
-  private String name;
+  private String Type;
+  private String Manufacturer;
+  private String Name;
 
-  public void getId(){
-    return;
+  static class Widget extends Product{
+    public Widget(String name, String manufacturer, String type){
+      super(name, manufacturer, type);
+    }
   }
 
-  public void setName(String n){
-    this.name = n;
+  Product(String name, String manufacturer, String type) {
+    this.Name = name;
+    this.Manufacturer = manufacturer;
+    this.Type = type;
   }
 
-  public void getName(){
-    return;
+  @Override
+  public String toString() {
+    return "Name: " + Name + "\n" + "Manufacturer: " + Manufacturer + "\n" + "Type: "
+        + Type;
   }
 
-  public void setManufacturer(String m){
-    this.manufacturer = m;
+  public int getId() {
+    return Id;
   }
 
-  public void getManufacturer(){
-    return;
+  public String getManufacturer() {
+    return Manufacturer;
+  }
+
+  public void setManufacturer(String manufacturer) {
+    Manufacturer = manufacturer;
+  }
+
+  public String getName() {
+    return Name;
+  }
+
+  public void setName(String name) {
+    Name = name;
   }
 }

@@ -14,8 +14,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import java.sql.Connection;
 
-
-
 /**
  * Handles mouse and keyboard events.
  *

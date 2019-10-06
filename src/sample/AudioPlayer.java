@@ -15,7 +15,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
   }
 
   public String getMediaType() {
-    return mediaType;
+    return this.mediaType;
   }
 
   public void setMediaType(String mediaType) {
@@ -24,14 +24,16 @@ public class AudioPlayer extends Product implements MultimediaControl {
 
   AudioPlayer(String name, String manufacturer, String audioSpecification, String mediaType) {
     super(name, manufacturer);
-
+    setAudioSpecification(audioSpecification);
+    setMediaType(mediaType);
 
   }
 
   @Override
   public String toString() {
 
-    return super.toString() +"\nAudio: " + "\nSupported Audio Formats:" + "\nSupported Playlist Formats:";
+    return super.toString() + "AUDIO " + "\nSupported Audio Formats: " + audioSpecification
+        + "\nSupported Playlist Formats: " + mediaType;
   }
 
   public void play() {
@@ -42,7 +44,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
 
   public void stop() {
 
-    System.out.println("Stopped");
+    System.out.println("Stopping");
   }
 
 

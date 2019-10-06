@@ -34,11 +34,13 @@ public class Main extends Application {
 
     launch(args);
 
-//    Product product1 = new Widget("iPod", "Apple", "AM");
-//    System.out.println(product1.toString());
-//
-//    Product product2 = new Widget("Zune", "Microsoft", "AM");
-//    System.out.println(product2.toString());
+    Product product1 = new Widget("iPod", "Apple", "AM");
+    System.out.println(product1.toString());
+
+    Product product2 = new Widget("Zune", "Microsoft", "AM");
+    System.out.println(product2.toString());
+
+    System.out.println("");
 
     AudioPlayer newProduct = new AudioPlayer("DP-X1A", "Onkyo", "DSD/FLAC/ALAC/WAV/AIFF/MQA/Ogg-Vorbis/MP3/AAC", "M3U/PLS/WPL");
     System.out.println(newProduct);

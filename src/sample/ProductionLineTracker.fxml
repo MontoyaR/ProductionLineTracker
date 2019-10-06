@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
@@ -16,7 +17,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" prefHeight="550.0" prefWidth="835.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" prefHeight="600.0" prefWidth="1000.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ProductionLineTrackerController">
   <columnConstraints>
     <ColumnConstraints />
     <ColumnConstraints />
@@ -26,13 +27,13 @@
     <RowConstraints />
   </rowConstraints>
   <children>
-    <TabPane prefHeight="540.0" prefWidth="1089.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+    <TabPane prefHeight="600.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="1" GridPane.rowIndex="1">
       <tabs>
         <Tab text="Product Line">
           <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="531.0" prefWidth="686.0">
               <children>
-                <Button fx:id="btnPrint" layoutX="185.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#addProduct" text="Add Product" />
+                <Button fx:id="btnPrint" layoutX="185.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#handleAddProduct" text="Add Product" />
                 <GridPane layoutX="21.0" layoutY="14.0" prefHeight="142.0" prefWidth="276.0">
                   <columnConstraints>
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -45,20 +46,20 @@
                   </rowConstraints>
                   <children>
                     <Label prefHeight="60.0" prefWidth="172.0" text="Product Name" />
-                    <TextField GridPane.columnIndex="1" />
+                    <TextField fx:id="txtProductName" GridPane.columnIndex="1" />
                     <Label text="Manufacturer" GridPane.rowIndex="1" />
                     <Label text="Item Type" GridPane.rowIndex="2" />
-                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <TextField fx:id="txtManufacturer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                     <ChoiceBox fx:id="chbxItemType" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   </children>
                 </GridPane>
-                <TableView layoutX="32.0" layoutY="200.0" prefHeight="297.0" prefWidth="762.0">
+                <TableView layoutX="21.0" layoutY="240.0" prefHeight="297.0" prefWidth="933.0">
                   <columns>
                     <TableColumn prefWidth="75.0" text="C1" />
                     <TableColumn prefWidth="75.0" text="C2" />
                   </columns>
                 </TableView>
-                <Label layoutX="351.0" layoutY="156.0" prefHeight="33.0" prefWidth="132.0" text="Existing Products" />
+                <Label layoutX="409.0" layoutY="191.0" prefHeight="33.0" prefWidth="132.0" text="Existing Products" />
               </children>
             </AnchorPane>
           </content>
@@ -87,6 +88,9 @@
           </content>
         </Tab>
       </tabs>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
     </TabPane>
   </children>
 </GridPane>

@@ -12,13 +12,13 @@ public abstract class Product implements Item {
     this.Type = type;
   }
 
-  public Product(String name, String manufacturer) {
+  Product(String name, String manufacturer) {
     this.Name = name;
     this.Manufacturer = manufacturer;
   }
 
   public String toString() {
-    return "Name: " + Name + "\n" + "Manufacturer: " + Manufacturer + "\n" + "Type: "; // + type;
+    return "Name: " + Name + "\n" + "Manufacturer: " + Manufacturer + "\n" + "Type: " + Type;
   }
 
   public int getId() {
@@ -40,6 +40,12 @@ public abstract class Product implements Item {
   public void setName(String name) {
     Name = name;
   }
+
+  public void setId(int id) { Id = id; }
+
+  public String getType() { return Type; }
+
+  public void setType(String type) { Type = type; }
 
 }
 

@@ -13,7 +13,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import java.sql.Connection;
 import sample.DatabaseHandler;
@@ -40,6 +43,23 @@ public class ProductionLineTrackerController {
   public ChoiceBox<ItemType> chbxItemType;
 
   @FXML
+  private TextArea ProductionLog;
+
+
+
+  @FXML
+  private TableColumn<Integer, Product> tabcolID;
+
+  @FXML
+  private TableColumn<String, Product> tabcolName;
+
+  @FXML
+  private TableColumn<String, Product> tabcolType;
+
+  @FXML
+  private TableColumn<String, Product> tabcolManufacturer;
+
+  @FXML
   public ComboBox<String> cbxQuantity;
   ObservableList<String> list = FXCollections
       .observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
@@ -55,10 +75,6 @@ public class ProductionLineTrackerController {
     System.out.println(type);
   }
 
-  /**
-   * This method allows the user to add a product into the database.
-   * @param event
-   */
   @FXML
   void handleAddProduct(MouseEvent event){
     String productName = txtProductName.getText();
@@ -75,6 +91,12 @@ public class ProductionLineTrackerController {
       e.printStackTrace();
     }
   }
+
+  @FXML
+  void loadProducts(Product product){
+
+  }
+
 
  @FXML
   public void initialize() {

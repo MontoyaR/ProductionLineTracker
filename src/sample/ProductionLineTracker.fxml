@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" prefHeight="600.0" prefWidth="1000.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ProductionLineTrackerController">
+<GridPane alignment="center" hgap="10" prefHeight="600.0" prefWidth="1000.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ProductionLineTrackerController">
   <columnConstraints>
     <ColumnConstraints />
     <ColumnConstraints />
@@ -55,8 +55,10 @@
                 </GridPane>
                 <TableView layoutX="21.0" layoutY="240.0" prefHeight="297.0" prefWidth="933.0">
                   <columns>
-                    <TableColumn prefWidth="75.0" text="C1" />
-                    <TableColumn prefWidth="75.0" text="C2" />
+                    <TableColumn fx:id="tabcolID" prefWidth="75.0" text="ID" />
+                    <TableColumn fx:id="tabcolName" prefWidth="75.0" text="NAME" />
+                              <TableColumn fx:id="tabcolType" prefWidth="75.0" text="TYPE" />
+                              <TableColumn fx:id="tabcolManufacturer" prefWidth="141.0" text="MANUFACTURER" />
                   </columns>
                 </TableView>
                 <Label layoutX="409.0" layoutY="191.0" prefHeight="33.0" prefWidth="132.0" text="Existing Products" />
@@ -82,7 +84,7 @@
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Button layoutX="308.0" layoutY="428.0" mnemonicParsing="false" onMouseClicked="#Println" text="Button" />
-                <TextArea layoutX="44.0" layoutY="19.0" prefHeight="389.0" prefWidth="593.0" />
+                <TextArea fx:id="ProductionLog" layoutX="44.0" layoutY="19.0" prefHeight="389.0" prefWidth="593.0" />
               </children>
             </AnchorPane>
           </content>

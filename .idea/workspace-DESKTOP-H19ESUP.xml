@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="JPP Issue 5: ProductionRecord 2 Incomplete">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProductionLineTracker/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProductionLineTracker/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/HR.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/res/HR.trace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/hr.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/res/hr.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ProductionLineTrackerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ProductionLineTrackerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ProductionRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ProductionRecord.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="HR" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="HR" type="feb32156:DbDataSourceImpl" />
+        <item name="HR: database" type="2aa06773:H2ImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="HR" type="feb32156:DbDataSourceImpl" />
+        <item name="HR: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JavaFxApplication" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\ramontoya7474\OneDrive - Florida Gulf Coast University\IdeaProjects\ProductionLineTracker\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectId" id="1Qi66bBU6pC8fzmQHGOur6YO2xu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="h2" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/res" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <module name="ProductionLineTracker" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b9f54c0c" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b9f54c0c" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@417a2fb9" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b9f54c0c" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@fe3b4f9" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+      <created>1359379246138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1359379246138</updated>
+      <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1568240895665" duration="1240000" />
+      <workItem from="1568242148960" duration="188000" />
+      <workItem from="1568242348876" duration="282000" />
+      <workItem from="1568242651317" duration="1368000" />
+      <workItem from="1568247954894" duration="3517000" />
+      <workItem from="1568305436094" duration="51000" />
+      <workItem from="1568838062801" duration="278000" />
+      <workItem from="1568845439154" duration="2835000" />
+      <workItem from="1568851004628" duration="3273000" />
+      <workItem from="1568928415726" duration="6014000" />
+      <workItem from="1569098221720" duration="3065000" />
+      <workItem from="1569115540253" duration="303000" />
+      <workItem from="1569261993904" duration="6000" />
+      <workItem from="1569443058934" duration="65000" />
+      <workItem from="1569443324261" duration="1087000" />
+      <workItem from="1569445847709" duration="6780000" />
+      <workItem from="1569609106664" duration="4212000" />
+      <workItem from="1569613401817" duration="2916000" />
+      <workItem from="1569620623897" duration="215000" />
+      <workItem from="1569627887350" duration="11000" />
+      <workItem from="1569627958555" duration="35000" />
+      <workItem from="1569628943796" duration="660000" />
+      <workItem from="1569866510357" duration="426000" />
+      <workItem from="1569866985949" duration="2857000" />
+      <workItem from="1570047133501" duration="26000" />
+      <workItem from="1570047184037" duration="9640000" />
+      <workItem from="1570058952312" duration="6570000" />
+      <workItem from="1570132090588" duration="637000" />
+      <workItem from="1570134000322" duration="2824000" />
+      <workItem from="1570149800185" duration="152000" />
+      <workItem from="1570150147307" duration="28000" />
+      <workItem from="1570150492045" duration="183000" />
+      <workItem from="1570151167710" duration="260000" />
+      <workItem from="1570195807547" duration="6000" />
+      <workItem from="1570295304102" duration="18547000" />
+      <workItem from="1570328483039" duration="2464000" />
+      <workItem from="1570331515789" duration="376000" />
+      <workItem from="1570469105017" duration="644000" />
+      <workItem from="1570559372206" duration="13000" />
+      <workItem from="1570652396780" duration="1490000" />
+      <workItem from="1570654430951" duration="6018000" />
+      <workItem from="1570847779814" duration="4692000" />
+      <workItem from="1570888074845" duration="2609000" />
+      <workItem from="1570994547041" duration="630000" />
+      <workItem from="1571164839732" duration="10000" />
+      <workItem from="1571175179456" duration="2000" />
+      <workItem from="1571175227123" duration="622000" />
+      <workItem from="1571257273921" duration="7415000" />
+      <workItem from="1571333495345" duration="1234000" />
+      <workItem from="1571341498379" duration="2954000" />
+      <workItem from="1571862576810" duration="2792000" />
+      <workItem from="1571870144627" duration="2291000" />
+      <workItem from="1571941811524" duration="20000" />
+      <workItem from="1572103721586" duration="1470000" />
+    </task>
+    <task id="LOCAL-00001" summary="Week 1 &amp; 2">
+      <created>1568243971305</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568243971305</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Week 3">
+      <created>1568251181730</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568251181730</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Week 4">
+      <created>1568251973562</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568251973562</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Week 3 — New Addition">
+      <created>1568848420728</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568848420728</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Week 3 — New Addition">
+      <created>1568857015157</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1568857015158</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Week 5 — Add Product to database in Product Line tab">
+      <created>1568943760943</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1568943760943</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Week 5 — Complete">
+      <created>1569114888751</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1569114888751</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Javadocs">
+      <created>1569115475515</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1569115475516</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Week 5 — Part 2">
+      <created>1569453279251</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1569453279251</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Created Database Class">
+      <created>1570047228969</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1570047228969</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Class">
+      <created>1570057652369</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1570057652369</updated>
+    </task>
+    <task id="LOCAL-00012" summary="JPP Issue 1b: Item and Product">
+      <created>1570069544559</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1570069544559</updated>
+    </task>
+    <task id="LOCAL-00013" summary="JPP Issue 2: MultimediaControl and AudioPlayer — Incomplete">
+      <created>1570327986681</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1570327986681</updated>
+    </task>
+    <task id="LOCAL-00014" summary="JPP Issue 2: ~~ Complete">
+      <created>1570330935690</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1570330935690</updated>
+    </task>
+    <task id="LOCAL-00015" summary="JPP Issue 4: ProductionRecord 1">
+      <created>1571341855710</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1571341855710</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Week 1 &amp; 2" />
+    <MESSAGE value="Week 3" />
+    <MESSAGE value="Week 4" />
+    <MESSAGE value="Week 3 — New Addition" />
+    <MESSAGE value="Week 5 — Add Product to database in Product Line tab" />
+    <MESSAGE value="Week 5 — Complete" />
+    <MESSAGE value="Javadocs" />
+    <MESSAGE value="Week 5 — Part 2" />
+    <MESSAGE value="Created Database Class" />
+    <MESSAGE value="Class" />
+    <MESSAGE value="JPP Issue 1b: Item and Product" />
+    <MESSAGE value="JPP Issue 2: MultimediaControl and AudioPlayer — Incomplete" />
+    <MESSAGE value="JPP Issue 2: ~~ Complete" />
+    <MESSAGE value="JPP Issue 4: ProductionRecord 1" />
+    <MESSAGE value="JPP Issue 5: ProductionRecord 2 Incomplete" />
+    <option name="LAST_COMMIT_MESSAGE" value="JPP Issue 5: ProductionRecord 2 Incomplete" />
+  </component>
+</project>

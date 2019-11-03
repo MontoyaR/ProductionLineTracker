@@ -4,9 +4,18 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Database used to initialize a connection the the H2 database.
+ *
+ * @author Ricardo Montoya
+ */
 public class DatabaseHandler {
-  Connection conn = null;
 
+  /**
+   * Method used to establish a connection to the database.
+   *
+   * @return
+   */
   public static Connection initializeDB() {
 
     final String JDBC_DRIVER = "org.h2.Driver";

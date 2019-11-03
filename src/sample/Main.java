@@ -1,6 +1,5 @@
 package sample;
 
-
 import java.util.ArrayList;
 import java.util.Date;
 import javafx.application.Application;
@@ -9,11 +8,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 /**
  * The starting point of the program.
  *
- * @author ramontoya7474
+ * @author Ricardo Montoya
  */
 public class Main extends Application {
 
@@ -32,10 +30,17 @@ public class Main extends Application {
     primaryStage.show();
   }
 
+  /**
+   * Main start of the program.
+   *
+   * @param args —
+   */
   public static void main(String[] args) {
 
     launch(args);
 
+    //Issue 1
+    System.out.println("Issue 1: ");
     Product product1 = new Widget("iPod", "Apple", "AM");
     System.out.println(product1.toString());
     System.out.println("");
@@ -44,6 +49,8 @@ public class Main extends Application {
     System.out.println(product2.toString());
     System.out.println("");
 
+    //Issue 2
+    System.out.println("Issue 2: ");
     AudioPlayer newProduct = new AudioPlayer("DP-X1A", "Onkyo",
         "DSD/FLAC/ALAC/WAV/AIFF/MQA/Ogg-Vorbis/MP3/AAC", "M3U/PLS/WPL");
     System.out.println(newProduct);
@@ -53,6 +60,8 @@ public class Main extends Application {
     newProduct.previous();
     System.out.println("");
 
+    //Issue 3
+    System.out.println("Issue 3: ");
     AudioPlayer newAudioProduct = new AudioPlayer("DP-X1A", "Onkyo",
         "DSD/FLAC/ALAC/WAV/AIFF/MQA/Ogg-Vorbis/MP3/AAC", "M3U/PLS/WPL");
     Screen newScreen = new Screen("720x480", 40, 22);
@@ -68,11 +77,10 @@ public class Main extends Application {
       p.next();
       p.previous();
     }
-
     System.out.println();
 
-
-
+    //Issue 4
+    System.out.println("Issue 4: ");
     // test constructor used when creating production records from user interface
     Integer numProduced = 3;  // this will come from the combobox in the UI
 
@@ -98,5 +106,22 @@ public class Main extends Application {
 
     pr.setProdDate(new Date());
     System.out.println(pr.getProdDate());
+
+    System.out.println();
+
+    Product productProduced = new Widget("iPod", "Apple", ItemType.AUDIO);
+
+    //Issue 5
+    System.out.println("Issue 5: ");
+    // test constructor used when creating production records from user interface
+    int numberProduced = 3;  // this will come from the combobox in the UI
+    int itemCount = 0;
+
+    for (int productionRunProduct = 0; productionRunProduct < numberProduced;
+        productionRunProduct++) {
+      ProductionRecord prodrec = new ProductionRecord(productProduced, itemCount++);
+      // using the iterator as the product id for testing
+      System.out.println(prodrec.toString());
+    }
   }
 }

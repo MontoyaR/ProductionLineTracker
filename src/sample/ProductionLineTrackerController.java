@@ -1,5 +1,6 @@
 package sample;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
@@ -33,16 +35,12 @@ public class ProductionLineTrackerController {
   PreparedStatement preparedStatement = null;
   ResultSet resultSet = null;
 
-  ArrayList<Widget> productLine = new ArrayList<>();
-  ObservableList<Widget> list = FXCollections.observableArrayList(productLine);
+  ArrayList<Product> productLine = new ArrayList<>();
+  ObservableList<Product> list = FXCollections.observableArrayList(productLine);
+
   ObservableList<String> lists = FXCollections
       .observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
-  @FXML
-  private TextField txtProductName;
-
-  @FXML
-  private TextField txtManufacturer;
 
   @FXML
   public ChoiceBox<ItemType> chbxItemType;
@@ -51,22 +49,34 @@ public class ProductionLineTrackerController {
   private TextArea ProductionLog;
 
   @FXML
-  private TableView<Widget> tableView;
+  public ComboBox<String> cbxQuantity;
 
+  //TextField
+  @FXML
+  private TextField txtProductName;
+  @FXML
+  private TextField txtManufacturer;
+
+  //TableView
+  @FXML
+  private TableView<Product> tableView;
   @FXML
   private TableColumn<Product, Integer> idCol;
-
   @FXML
   private TableColumn<Product, String> nameCol;
-
   @FXML
   private TableColumn<Product, String> typeCol;
-
   @FXML
   private TableColumn<Product, String> manufacturerCol;
 
+  /**
+   *
+   * @param event
+   */
   @FXML
-  public ComboBox<String> cbxQuantity;
+  private void handleRefresh(ActionEvent event) {
+    setupProductLineTable();
+  }
 
   /**
    * Method used to display "Printing to console" on mouse click.
@@ -116,20 +126,26 @@ public class ProductionLineTrackerController {
    * Method used to initialize connection, attributes, and methods.
    */
   @FXML
-  public void initialize() {
-    connection = DatabaseHandler.initializeDB();
+  public void initialize() throws IOException {
+    connection = DBUtil.initializeDB();
 
+    initCombobox();
+    initCol();
+    setupProductLineTable();
+
+    ProductionRecord pr = new ProductionRecord(0, 3, "1", new Date());
+    ProductionLog.setText(pr.toString());
+  }
+
+  /**
+   *
+   */
+  public void initCombobox() {
     cbxQuantity.setItems(lists);
     cbxQuantity.setEditable(true);
     cbxQuantity.getSelectionModel().selectFirst();
 
     chbxItemType.getItems().setAll(ItemType.values());
-
-    ProductionRecord pr = new ProductionRecord(0, 3, "1", new Date());
-    ProductionLog.setText(pr.toString());
-
-    initCol();
-    setupProductLineTable();
   }
 
   /**
@@ -149,6 +165,7 @@ public class ProductionLineTrackerController {
     list.clear();
 
     String sql = "SELECT * FROM PRODUCT";
+
     try {
       Statement stmt = connection.createStatement();
       ResultSet rs = stmt.executeQuery(sql);
@@ -157,7 +174,6 @@ public class ProductionLineTrackerController {
         String NAME = rs.getString("Name");
         String MANUFACTURER = rs.getString("Manufacturer");
         String TYPE = rs.getString("Type");
-
         list.add(new Widget(ID, NAME, MANUFACTURER, TYPE));
       }
     } catch (SQLException e) {

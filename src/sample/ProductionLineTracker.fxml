@@ -4,8 +4,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -62,10 +64,17 @@
                 <TableView fx:id="tableView" layoutX="21.0" layoutY="240.0" prefHeight="297.0" prefWidth="933.0">
                   <columns>
                     <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
-                    <TableColumn fx:id="nameCol" prefWidth="75.0" text="NAME" />
-                              <TableColumn fx:id="typeCol" prefWidth="75.0" text="TYPE" />
-                              <TableColumn fx:id="manufacturerCol" prefWidth="141.0" text="MANUFACTURER" />
+                    <TableColumn fx:id="nameCol" prefWidth="165.39996337890625" text="NAME" />
+                              <TableColumn fx:id="typeCol" prefWidth="76.60003662109375" text="TYPE" />
+                              <TableColumn fx:id="manufacturerCol" prefWidth="148.79998779296875" text="MANUFACTURER" />
                   </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#handleRefresh" text="Refresh" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
                 </TableView>
                 <Label layoutX="409.0" layoutY="191.0" prefHeight="33.0" prefWidth="132.0" text="Existing Products" />
               </children>

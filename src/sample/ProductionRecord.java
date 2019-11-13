@@ -16,6 +16,7 @@ public class ProductionRecord {
   private int productID;
   private String serialNumber;
   private Date dateProduced;
+  ItemType itemType;
 
 
   /**
@@ -52,6 +53,7 @@ public class ProductionRecord {
    * @param itemCount       — itemCount for the array
    */
   ProductionRecord(Product productProduced, int itemCount) {
+
     setSerialNum(
         productProduced.getManufacturer().substring(0, 3) + ItemType.AUDIO.getLabel() + "0000"
             + itemCount);

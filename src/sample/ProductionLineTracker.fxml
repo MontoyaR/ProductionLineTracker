@@ -4,10 +4,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -18,6 +16,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <!--
   * ProductionLineTracker FXML file used to adjust functions within the GUI application.
@@ -39,10 +38,10 @@
       <tabs>
         <Tab text="Product Line">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="531.0" prefWidth="686.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="531.0" prefWidth="686.0" style="-fx-background-color: #2A2E37;">
               <children>
-                <Button fx:id="btnPrint" layoutX="185.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#handleAddProduct" text="Add Product" />
-                <GridPane layoutX="21.0" layoutY="14.0" prefHeight="142.0" prefWidth="276.0">
+                <Button fx:id="btnPrint" layoutX="705.0" layoutY="169.0" mnemonicParsing="false" onAction="#insertProduct" text="Add Product" />
+                <GridPane layoutX="627.0" layoutY="26.0" prefHeight="142.0" prefWidth="276.0">
                   <columnConstraints>
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -53,30 +52,44 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   </rowConstraints>
                   <children>
-                    <Label prefHeight="60.0" prefWidth="172.0" text="Product Name" />
-                    <TextField fx:id="txtProductName" GridPane.columnIndex="1" />
-                    <Label text="Manufacturer" GridPane.rowIndex="1" />
-                    <Label text="Item Type" GridPane.rowIndex="2" />
-                    <TextField fx:id="txtManufacturer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Label prefHeight="60.0" prefWidth="172.0" text="Product Name" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                    <TextField fx:id="txtProductName" promptText="Name" GridPane.columnIndex="1" />
+                    <Label text="Manufacturer" textFill="WHITE" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                    <Label text="Item Type" textFill="WHITE" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                    <TextField fx:id="txtManufacturer" promptText="Manufacturer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                     <ChoiceBox fx:id="chbxItemType" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   </children>
                 </GridPane>
-                <TableView fx:id="tableView" layoutX="21.0" layoutY="240.0" prefHeight="297.0" prefWidth="933.0">
+                <TableView fx:id="tableView" layoutX="21.0" layoutY="203.0" prefHeight="334.0" prefWidth="933.0">
                   <columns>
                     <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
                     <TableColumn fx:id="nameCol" prefWidth="165.39996337890625" text="NAME" />
-                              <TableColumn fx:id="typeCol" prefWidth="76.60003662109375" text="TYPE" />
-                              <TableColumn fx:id="manufacturerCol" prefWidth="148.79998779296875" text="MANUFACTURER" />
+                              <TableColumn fx:id="typeCol" prefWidth="129.79998779296875" text="TYPE" />
+                              <TableColumn fx:id="manufacturerCol" prefWidth="158.4000244140625" text="MANUFACTURER" />
                   </columns>
-                           <contextMenu>
-                              <ContextMenu>
-                                <items>
-                                  <MenuItem mnemonicParsing="false" onAction="#handleRefresh" text="Refresh" />
-                                </items>
-                              </ContextMenu>
-                           </contextMenu>
                 </TableView>
-                <Label layoutX="409.0" layoutY="191.0" prefHeight="33.0" prefWidth="132.0" text="Existing Products" />
+                <Label layoutX="356.0" layoutY="142.0" prefHeight="33.0" prefWidth="167.0" text="Existing Products" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font></Label>
+                        <Button fx:id="listProductsBtn" layoutX="20.0" layoutY="169.0" mnemonicParsing="false" onAction="#setupProductLineTable" prefHeight="25.0" prefWidth="192.0" text="List Products" />
+                        <Label layoutX="14.0" layoutY="40.0" prefHeight="23.0" prefWidth="81.0" text="Product ID" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtProductID" layoutX="14.0" layoutY="67.0" prefHeight="25.0" prefWidth="153.0" promptText="ID" />
+                        <Button fx:id="searchProductBtn" layoutX="14.0" layoutY="100.0" mnemonicParsing="false" onAction="#searchProduct" prefHeight="25.0" prefWidth="71.0" text="Search" />
+                        <Button layoutX="95.0" layoutY="101.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="25.0" prefWidth="71.0" text="Delete" />
               </children>
             </AnchorPane>
           </content>
@@ -104,6 +117,30 @@
             </AnchorPane>
           </content>
         </Tab>
+            <Tab text="Employee">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="14.0" layoutY="20.0" prefHeight="142.0" prefWidth="276.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label prefHeight="60.0" prefWidth="172.0" text="Full Name" />
+                              <TextField fx:id="txtFullName" GridPane.columnIndex="1" />
+                              <Label text="Create User ID" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtUserID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
       </tabs>
          <GridPane.margin>
             <Insets />

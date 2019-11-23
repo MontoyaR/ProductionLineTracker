@@ -39,5 +39,20 @@ public class Main extends Application {
   public static void main(String[] args) {
 
     launch(args);
+
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter Employee Name (first last)");
+    String name = scan.nextLine();
+    System.out.println("Enter Employee password");
+    String password = scan.nextLine();
+    Employee employee = new Employee(name, password);
+    System.out.println(employee);
+
+    System.out.println();
+
+
+    System.out.println("Username: " + employee.getUsername());
+    System.out.println("Email: " + employee.getEmail());
+    System.out.println("Password: " + employee.getPassword());
   }
 }

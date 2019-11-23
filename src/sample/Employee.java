@@ -4,35 +4,80 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Employee {
-
-  StringBuilder name;
+  StringBuilder Name;
+  String name;
   String username;
   String password;
   String email;
 
   Employee(String name, String password) {
 
+    if (checkName(name)) {
+      String segments[] = name.split(" ");
+      setUsername(name.substring(0, 1).toLowerCase() + segments[1].toLowerCase());
+      setEmail(segments[0].toLowerCase() + "." + segments[1]
+          .toLowerCase() + "@oracleacademy.Test");
+      this.name = name;
+    } else {
+      setUsername("default");
+      setEmail("user@oracleacademy.Test");
+    }
+
+    if (isValidPassword(password)) {
+      setPassword(password);
+      this.password = password;
+    } else {
+      setPassword("pw");
+    }
   }
 
 
-  private void setName(StringBuilder name) {
-    this.name = name;
+
+
+  /**
+   * checkName method will check if the string name (first last) has:
+   * Only one space, any lowercase or uppercase letters .
+   *
+   * @param name
+   * @return
+   */
+  private boolean checkName(String name) {
+    return name.matches("^[a-zA-Z]+\\s[a-zA-Z]+$");
   }
 
-  //setUsername will set the username field to the first initial of the first name and then the last name, all lowercase.
-  private void setUsername(String username) {
-    this.username = username;
+
+  private boolean isValidPassword(String password){
+    return password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).*$");
   }
 
-  private void createUsername(StringBuilder name) {
-    this.name = name;
+
+
+  /**
+   *
+   * @param email
+   */
+  public void setEmail(String email) {
+    this.email = email;
   }
 
-//  private boolean checkName(StringBuilder name) {
-//
-//    //check if the name contains a space. If it does, it will call setUsername and setEmail, passing
-//    // the name in to both. If it doesn't contain a space, set the username to "default" and the
-//    // email to "user@oracleacademy.Test"
-//
-//  }
+  public void setUsername(String name) {
+
+    this.username = name;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  public String getUsername() {
+    return username;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public String getPassword() {
+    return password;
+  }
 }

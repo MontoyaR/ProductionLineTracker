@@ -22,9 +22,6 @@ public class DBUtil {
   static final String USER = "";
   static String PASS = "";
 
-
-
-
   //Connection
   private static Connection conn = null;
 
@@ -33,6 +30,7 @@ public class DBUtil {
    *
    * @throws ClassNotFoundException
    * @throws SQLException
+   * @throws IOException
    */
   public static void dbConnect() throws ClassNotFoundException, SQLException, IOException {
     //Setting H2 JDBC Driver
@@ -44,6 +42,7 @@ public class DBUtil {
       throw e;
     }
 
+    //Get password from res/properties
     Properties prop = new Properties();
     prop.load(new FileInputStream("res/properties"));
     PASS = prop.getProperty("password");
@@ -83,6 +82,7 @@ public class DBUtil {
    * @return
    * @throws SQLException
    * @throws ClassNotFoundException
+   * @throws IOException
    */
   public static ResultSet dbExecuteQuery(String queryStmt)
       throws SQLException, ClassNotFoundException, IOException {
@@ -130,6 +130,7 @@ public class DBUtil {
    * @param sqlStmt
    * @throws SQLException
    * @throws ClassNotFoundException
+   * @throws IOException
    */
   public static void dbExecuteUpdate(String sqlStmt)
       throws SQLException, ClassNotFoundException, IOException {

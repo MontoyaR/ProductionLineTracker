@@ -1,5 +1,6 @@
 package sample;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.IO;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -28,14 +30,21 @@ import javafx.scene.input.MouseEvent;
  */
 public class ProductionLineTrackerController {
 
+  //ChoiceBox
   @FXML
   public ChoiceBox<ItemType> chbxItemType;
 
+  //TextArea
   @FXML
   private TextArea ProductionLog;
 
+  //ComboBox
   @FXML
   public ComboBox<String> cbxQuantity;
+
+  //ListView
+  @FXML
+  private ListView<Product> listView;
 
   //TextField
   @FXML
@@ -63,22 +72,29 @@ public class ProductionLineTrackerController {
   }
 
   /**
-   * Method used to initialize connection, attributes, and methods.
+   * Method used to initialize attributes and methods.
+   *
+   * @throws SQLException
+   * @throws IOException
+   * @throws ClassNotFoundException
    */
   @FXML
-  public void initialize() {
+  public void initialize() throws SQLException, IOException, ClassNotFoundException {
 
     initCombobox();
     initCol();
+    initListView();
 
     ProductionRecord pr = new ProductionRecord(0, 3, "1", new Date());
     ProductionLog.setText(pr.toString());
   }
 
   /**
+   *
    * @param event
    * @throws SQLException
    * @throws ClassNotFoundException
+   * @throws IOException
    */
   @FXML
   private void setupProductLineTable(ActionEvent event)
@@ -89,6 +105,8 @@ public class ProductionLineTrackerController {
 
       //Populate Products on TableView
       tableView.setItems(productLine);
+
+
     } catch (SQLException | IOException e) {
       System.out
           .println("Error occurred while getting product information from the database.\n" + e);
@@ -96,6 +114,13 @@ public class ProductionLineTrackerController {
     }
   }
 
+  /**
+   *
+   * @param actionEvent
+   * @throws SQLException
+   * @throws ClassNotFoundException
+   * @throws IOException
+   */
   @FXML
   private void searchProduct(ActionEvent actionEvent)
       throws SQLException, ClassNotFoundException, IOException {
@@ -126,14 +151,17 @@ public class ProductionLineTrackerController {
     //Add Product to the ObservableList
     prodData.add(prod);
 
+
     //Set items to the TableView
     tableView.setItems(prodData);
   }
 
   /**
+   *
    * @param actionEvent
    * @throws SQLException
    * @throws ClassNotFoundException
+   * @throws IOException
    */
   @FXML
   private void insertProduct(ActionEvent actionEvent)
@@ -148,9 +176,11 @@ public class ProductionLineTrackerController {
   }
 
   /**
+   *
    * @param actionEvent
    * @throws SQLException
    * @throws ClassNotFoundException
+   * @throws IOException
    */
   @FXML
   private void deleteProduct(ActionEvent actionEvent)
@@ -166,7 +196,7 @@ public class ProductionLineTrackerController {
   /**
    * initComboBox method is used to initialize the values in the ComboBox
    */
-  public void initCombobox() {
+  private void initCombobox() {
     ObservableList<String> lists = FXCollections
         .observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
@@ -179,7 +209,7 @@ public class ProductionLineTrackerController {
   /**
    * initCol method used to initialize the columns for the TableView.
    */
-  public void initCol() {
+  private void initCol() {
     //Note: The first word must match the id from fxml and the last word must match the field name
     idCol.setCellValueFactory(new PropertyValueFactory<>("Id"));
     nameCol.setCellValueFactory(new PropertyValueFactory<>("Name"));
@@ -187,6 +217,23 @@ public class ProductionLineTrackerController {
     typeCol.setCellValueFactory(new PropertyValueFactory<>("Type"));
   }
 
+  /**
+   *
+   * @throws SQLException
+   * @throws ClassNotFoundException
+   * @throws IOException
+   */
+  private void initListView() throws SQLException, ClassNotFoundException, IOException {
+    try {
+      ObservableList<Product> prodctLine = listProducts();
+
+      listView.setItems(prodctLine);
+
+    } catch (SQLException | IOException e) {
+      System.out.println("SQL SELECT Operation has has failed: \"" + e);
+      throw e;
+    }
+  }
 
   /**
    * This method holds an ObservableList which comprises of Product Object. This allows the transfer
@@ -195,10 +242,9 @@ public class ProductionLineTrackerController {
    * @param rs
    * @return
    * @throws SQLException
-   * @throws ClassNotFoundException
    */
   private ObservableList<Product> getProductList(ResultSet rs)
-      throws SQLException, ClassNotFoundException {
+      throws SQLException {
     //Declare an ObservableList which comprises of Product Objects
     ObservableList<Product> prodList = FXCollections.observableArrayList();
 
@@ -217,9 +263,11 @@ public class ProductionLineTrackerController {
   }
 
   /**
+   *
    * @return
    * @throws SQLException
    * @throws ClassNotFoundException
+   * @throws IOException
    */
   private ObservableList<Product> listProducts()
       throws SQLException, ClassNotFoundException, IOException {
@@ -262,6 +310,14 @@ public class ProductionLineTrackerController {
     return prod;
   }
 
+  /**
+   *
+   * @param prodID
+   * @return
+   * @throws SQLException
+   * @throws ClassNotFoundException
+   * @throws IOException
+   */
   private Product searchProd(String prodID) throws SQLException, ClassNotFoundException, IOException {
     //Declare SELECT statement
     String selectStmt = "SELECT * FROM PRODUCT WHERE ID=" + prodID + ";";
@@ -284,11 +340,13 @@ public class ProductionLineTrackerController {
   }
 
   /**
+   *
    * @param name
    * @param type
    * @param manufacturer
    * @throws SQLException
    * @throws ClassNotFoundException
+   * @throws IOException
    */
   private void insertProd(String name, String type, String manufacturer)
       throws SQLException, ClassNotFoundException, IOException {
@@ -307,9 +365,11 @@ public class ProductionLineTrackerController {
   }
 
   /**
+   *
    * @param prodID
    * @throws SQLException
    * @throws ClassNotFoundException
+   * @throws IOException
    */
   private void deleteProdWithID(String prodID)
       throws SQLException, ClassNotFoundException, IOException {

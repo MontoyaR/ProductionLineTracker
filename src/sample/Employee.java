@@ -42,6 +42,8 @@ public class Employee {
     } else {
       setPassword("pw");
     }
+
+    reverseString(password);
   }
 
 
@@ -78,6 +80,21 @@ public class Employee {
         + "Email: " + email + "\n" + "Initial Password: " + password;
   }
 
+  /**
+   * Method used to reverse the password.
+   *
+   * @param password — password of the Employee.
+   * @return StringBuilder — reversed.
+   */
+  public String reverseString(String password) {
+
+    StringBuilder reverse = new StringBuilder(password);
+
+    reverse.reverse();
+
+    return reverse.toString();
+
+  }
 
   /**
    * setEmail setter method used to set the email variable.

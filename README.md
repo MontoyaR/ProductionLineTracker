@@ -23,9 +23,6 @@ SceneBuilder
 
 Resource: https://www.swtestacademy.com/database-operations-javafx/
 
-## Contributing
-
-
 ## Author
 Ricardo Montoya
 

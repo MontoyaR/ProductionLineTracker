@@ -18,7 +18,9 @@ preferred IDE and clone with HTTPS — https://github.com/MontoyaR/ProductionLin
 
 ## Built With
 IntelliJ
+
 SceneBuilder
+
 Resource: https://www.swtestacademy.com/database-operations-javafx/
 
 ## Contributing

@@ -10,7 +10,7 @@ inheritance, class hierarchies, polymorphism, interfaces, exceptions, stream I/O
 ## Documentation
 [JavaDoc](http://localhost:63342/ProductionLineTracker/doc/index.html?_ijt=lutk0ckbc9qavev34c4va8kd24)
 ## Diagrams
-
+![Diagram](res/ProductionLineTrackerClassDiagram.pdf)
 
 ## Getting Started
 

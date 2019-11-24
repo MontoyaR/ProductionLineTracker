@@ -8,8 +8,7 @@ inheritance, class hierarchies, polymorphism, interfaces, exceptions, stream I/O
 
 ![ProductionLineTracker](doc/ProductionLineTracker.gif)
 ## Documentation
-
-
+[JavaDoc](ProductionLineTracker/doc/index.html)
 ## Diagrams
 
 

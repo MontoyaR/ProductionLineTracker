@@ -1,4 +1,4 @@
-# Project Title
+# Production Line Tracker
 ProductionLineTracker is a Java GUI program assignment created by Ricardo Montoya at Florida Gulf Coast University throughout the COP 3003 
 Object-Oriented Programming course. The project incorportates computer programming concepts and problem solving using an object-oriented 
 programming language. Topics include use of predefined classes, creation of objects and classes, encapsulation using visibility modifiers, 
@@ -51,6 +51,3 @@ SOFTWARE.
 
 ## Acknowledgments
 SWTestAcademy
-
-## Key Programming Concepts Utilized
-

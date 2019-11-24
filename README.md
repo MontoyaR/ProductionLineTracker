@@ -17,22 +17,21 @@ To get a copy of ProductionLineTracker go to https://github.com/MontoyaR/Product
 preferred IDE and clone with HTTPS — https://github.com/MontoyaR/ProductionLineTracker.
 
 ## Built With
-
+IntelliJ
+SceneBuilder
+Resource: https://www.swtestacademy.com/database-operations-javafx/
 
 ## Contributing
 
 
 ## Author
-
+Ricardo Montoya
 
 ## License
 
 
 ## Acknowledgments
-
-
-## History
-
+SWTestAcademy
 
 ## Key Programming Concepts Utilized
 

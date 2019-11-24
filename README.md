@@ -6,7 +6,7 @@ inheritance, class hierarchies, polymorphism, interfaces, exceptions, stream I/O
 
 ## Demonstration
 
-![Alt text](relative/path/to/img.png)
+![ProductionLineTracker](doc/ProductionLineTracker.gif)
 ## Documentation
 
 

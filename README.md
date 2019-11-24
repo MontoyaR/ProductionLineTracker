@@ -13,9 +13,8 @@ inheritance, class hierarchies, polymorphism, interfaces, exceptions, stream I/O
 ![Diagram](/doc/Diagram.png)
 
 ## Getting Started
-Instructions to get a copy of the project up and running on someone's local machine for development and testing purposes.
 To get a copy of ProductionLineTracker go to https://github.com/MontoyaR/ProductionLineTracker to download the zip file or use Git on your
-preferred IDE and clone with HTTPS — https://github.com/MontoyaR/ProductionLineTracker .
+preferred IDE and clone with HTTPS — https://github.com/MontoyaR/ProductionLineTracker.
 
 ## Built With
 

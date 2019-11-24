@@ -15,6 +15,9 @@ public abstract class Product implements Item {
   private String Manufacturer;
   private String Name;
 
+  /**
+   * Constructor used by Widget through inheritance for Product creation for the ObservableList.
+   */
   Product() {
 
   }
@@ -147,6 +150,9 @@ public abstract class Product implements Item {
  */
 class Widget extends Product {
 
+  /**
+   * Constructor used for creation of new Product for the ObservableList.
+   */
   Widget()  {
 
   }

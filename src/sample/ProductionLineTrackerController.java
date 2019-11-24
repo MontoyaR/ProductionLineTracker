@@ -1,13 +1,8 @@
 package sample;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.IO;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -66,17 +61,28 @@ public class ProductionLineTrackerController {
   @FXML
   private TableColumn<Product, String> manufacturerCol;
 
+  /**
+   * Println method is used to print a string to console on MouseEvent.
+   *
+   * @param event — MouseEvent.
+   */
   @FXML
-  void Println(MouseEvent event) {
+  public void printLn(MouseEvent event) {
     System.out.println("Printing to console.");
   }
 
   /**
    * Method used to initialize attributes and methods.
    *
-   * @throws SQLException
-   * @throws IOException
-   * @throws ClassNotFoundException
+   * @throws ClassNotFoundException — Thrown when an application tries to load in a class through
+   *                                its string name using: The forName method in class Class. The
+   *                                findSystemClass method in class ClassLoader . The loadClass
+   *                                method in class ClassLoader.
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
+   * @throws IOException            — Signals that an I/O exception of some sort has occurred. This
+   *                                class is the general class of exceptions produced by failed or
+   *                                interrupted I/O operations.
    */
   @FXML
   public void initialize() throws SQLException, IOException, ClassNotFoundException {
@@ -90,11 +96,19 @@ public class ProductionLineTrackerController {
   }
 
   /**
+   * setupProductLineTable ActionEvent method is used to populate productLine ObservableList to the
+   * tableView.
    *
-   * @param event
-   * @throws SQLException
-   * @throws ClassNotFoundException
-   * @throws IOException
+   * @param event — ActionEvent.
+   * @throws ClassNotFoundException — Thrown when an application tries to load in a class through
+   *                                its string name using: The forName method in class Class. The
+   *                                findSystemClass method in class ClassLoader . The loadClass
+   *                                method in class ClassLoader.
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
+   * @throws IOException            — Signals that an I/O exception of some sort has occurred. This
+   *                                class is the general class of exceptions produced by failed or
+   *                                interrupted I/O operations.
    */
   @FXML
   private void setupProductLineTable(ActionEvent event)
@@ -115,11 +129,18 @@ public class ProductionLineTrackerController {
   }
 
   /**
+   * searchProduct ActionEvent method is used to populate the product by ID.
    *
-   * @param actionEvent
-   * @throws SQLException
-   * @throws ClassNotFoundException
-   * @throws IOException
+   * @param actionEvent — actionEvent.
+   * @throws ClassNotFoundException — Thrown when an application tries to load in a class through
+   *                                its string name using: The forName method in class Class. The
+   *                                findSystemClass method in class ClassLoader . The loadClass
+   *                                method in class ClassLoader.
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
+   * @throws IOException            — Signals that an I/O exception of some sort has occurred. This
+   *                                class is the general class of exceptions produced by failed or
+   *                                interrupted I/O operations.
    */
   @FXML
   private void searchProduct(ActionEvent actionEvent)
@@ -138,30 +159,36 @@ public class ProductionLineTrackerController {
   }
 
   /**
+   * populateProduct method used to populate the product to the table view.
    *
-   * @param prod
-   * @throws SQLException
-   * @throws ClassNotFoundException
+   * @param prod — Product object used to pass in the data based on information given.
    */
   @FXML
-  private void populateProduct(Product prod) throws SQLException, ClassNotFoundException {
+  private void populateProduct(Product prod) {
     //Declare an ObservableList for the TableView
     ObservableList<Product> prodData = FXCollections.observableArrayList();
 
     //Add Product to the ObservableList
     prodData.add(prod);
 
-
     //Set items to the TableView
     tableView.setItems(prodData);
   }
 
   /**
+   * insertProduct method used to insert a product into the database using two textfield and one
+   * ChoiceBox from the gui by passing string values to the insertProd method.
    *
-   * @param actionEvent
-   * @throws SQLException
-   * @throws ClassNotFoundException
-   * @throws IOException
+   * @param actionEvent — actionEvent.
+   * @throws ClassNotFoundException — Thrown when an application tries to load in a class through
+   *                                its string name using: The forName method in class Class. The
+   *                                findSystemClass method in class ClassLoader . The loadClass
+   *                                method in class ClassLoader.
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
+   * @throws IOException            — Signals that an I/O exception of some sort has occurred. This
+   *                                class is the general class of exceptions produced by failed or
+   *                                interrupted I/O operations.
    */
   @FXML
   private void insertProduct(ActionEvent actionEvent)
@@ -176,11 +203,19 @@ public class ProductionLineTrackerController {
   }
 
   /**
+   * deleteProduct method used to delete a product from the database using a textfield and passing
+   * it through the deleteProdWithID method.
    *
-   * @param actionEvent
-   * @throws SQLException
-   * @throws ClassNotFoundException
-   * @throws IOException
+   * @param actionEvent — actionEvent.
+   * @throws ClassNotFoundException — Thrown when an application tries to load in a class through
+   *                                its string name using: The forName method in class Class. The
+   *                                findSystemClass method in class ClassLoader . The loadClass
+   *                                method in class ClassLoader.
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
+   * @throws IOException            — Signals that an I/O exception of some sort has occurred. This
+   *                                class is the general class of exceptions produced by failed or
+   *                                interrupted I/O operations.
    */
   @FXML
   private void deleteProduct(ActionEvent actionEvent)
@@ -194,7 +229,7 @@ public class ProductionLineTrackerController {
   }
 
   /**
-   * initComboBox method is used to initialize the values in the ComboBox
+   * initComboBox method is used to initialize the values in the ComboBox.
    */
   private void initCombobox() {
     ObservableList<String> lists = FXCollections
@@ -218,10 +253,17 @@ public class ProductionLineTrackerController {
   }
 
   /**
+   * initListView method is used to initialize Product Object into the listView.
    *
-   * @throws SQLException
-   * @throws ClassNotFoundException
-   * @throws IOException
+   * @throws ClassNotFoundException — Thrown when an application tries to load in a class through
+   *                                its string name using: The forName method in class Class. The
+   *                                findSystemClass method in class ClassLoader . The loadClass
+   *                                method in class ClassLoader.
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
+   * @throws IOException            — Signals that an I/O exception of some sort has occurred. This
+   *                                class is the general class of exceptions produced by failed or
+   *                                interrupted I/O operations.
    */
   private void initListView() throws SQLException, ClassNotFoundException, IOException {
     try {
@@ -239,9 +281,10 @@ public class ProductionLineTrackerController {
    * This method holds an ObservableList which comprises of Product Object. This allows the transfer
    * of the ObservableList.
    *
-   * @param rs
-   * @return
-   * @throws SQLException
+   * @param rs —
+   * @return prodList — Holds Product objects by instantiating a new Widget Object.
+   * @throws SQLException — An exception that provides information on a database access error or
+   *                      other errors.
    */
   private ObservableList<Product> getProductList(ResultSet rs)
       throws SQLException {
@@ -263,11 +306,18 @@ public class ProductionLineTrackerController {
   }
 
   /**
+   * ObservableList used to hold Product Object.
    *
-   * @return
-   * @throws SQLException
-   * @throws ClassNotFoundException
-   * @throws IOException
+   * @return prodList — ObservableList that hold Product Objects.
+   * @throws ClassNotFoundException — Thrown when an application tries to load in a class through
+   *                                its string name using: The forName method in class Class. The
+   *                                findSystemClass method in class ClassLoader . The loadClass
+   *                                method in class ClassLoader.
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
+   * @throws IOException            — Signals that an I/O exception of some sort has occurred. This
+   *                                class is the general class of exceptions produced by failed or
+   *                                interrupted I/O operations.
    */
   private ObservableList<Product> listProducts()
       throws SQLException, ClassNotFoundException, IOException {
@@ -294,9 +344,10 @@ public class ProductionLineTrackerController {
    * Use ResultSet from Database as parameter and set Product's Object attributes and return Product
    * Object.
    *
-   * @param rs
-   * @return
-   * @throws SQLException
+   * @param rs — ResultSet data.
+   * @return prod — Product Object
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
    */
   private Product getProductFromResultSet(ResultSet rs) throws SQLException {
     Product prod = null;
@@ -311,14 +362,22 @@ public class ProductionLineTrackerController {
   }
 
   /**
+   * searchProd method used to search for a product based on its ID.
    *
-   * @param prodID
-   * @return
-   * @throws SQLException
-   * @throws ClassNotFoundException
-   * @throws IOException
+   * @param prodID — String variable used to hold the product ID.
+   * @return product — Product Object.
+   * @throws ClassNotFoundException — Thrown when an application tries to load in a class through
+   *                                its string name using: The forName method in class Class. The
+   *                                findSystemClass method in class ClassLoader . The loadClass
+   *                                method in class ClassLoader.
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
+   * @throws IOException            — Signals that an I/O exception of some sort has occurred. This
+   *                                class is the general class of exceptions produced by failed or
+   *                                interrupted I/O operations.
    */
-  private Product searchProd(String prodID) throws SQLException, ClassNotFoundException, IOException {
+  private Product searchProd(String prodID)
+      throws SQLException, ClassNotFoundException, IOException {
     //Declare SELECT statement
     String selectStmt = "SELECT * FROM PRODUCT WHERE ID=" + prodID + ";";
 
@@ -340,24 +399,33 @@ public class ProductionLineTrackerController {
   }
 
   /**
+   * insertProd method used to insert a Product into the database.
    *
-   * @param name
-   * @param type
-   * @param manufacturer
-   * @throws SQLException
-   * @throws ClassNotFoundException
-   * @throws IOException
+   * @param name         — String name variable passed by the insertProduct method.
+   * @param type         — String type variable passed by the insertProduct method.
+   * @param manufacturer — String manufacturer variable passed by the insertProduct method.
+   * @throws ClassNotFoundException — Thrown when an application tries to load in a class through
+   *                                its string name using: The forName method in class Class. The
+   *                                findSystemClass method in class ClassLoader . The loadClass
+   *                                method in class ClassLoader.
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
+   * @throws IOException            — Signals that an I/O exception of some sort has occurred. This
+   *                                class is the general class of exceptions produced by failed or
+   *                                interrupted I/O operations.
    */
   private void insertProd(String name, String type, String manufacturer)
       throws SQLException, ClassNotFoundException, IOException {
     //Declare INSERT statement
-    String updateStmt = "INSERT INTO PRODUCT(NAME, TYPE, MANUFACTURER) VALUES('" + name + "', '" +
-        type + "', '" + manufacturer + "');";
+    String updateStmt = "INSERT INTO PRODUCT(NAME, TYPE, MANUFACTURER) VALUES('" + name + "', '"
+        + type + "', '" + manufacturer + "');";
 
     //Execute INSERT statement
     try {
       DBUtil.dbExecuteUpdate(updateStmt);
-      System.out.println("Inserting Product:" + "\nProduct: " + name + "\nType: " + type + "\nManufacturer: " + manufacturer);
+      System.out.println(
+          "Inserting Product:" + "\nProduct: " + name + "\nType: " + type + "\nManufacturer: "
+              + manufacturer);
     } catch (SQLException | IOException e) {
       System.out.println("Error occurred while INSERT operation: " + e);
       throw e;
@@ -365,11 +433,18 @@ public class ProductionLineTrackerController {
   }
 
   /**
+   * deleteProdWithID method is used to delete a product from the database using the ID integer.
    *
-   * @param prodID
-   * @throws SQLException
-   * @throws ClassNotFoundException
-   * @throws IOException
+   * @param prodID — String id variable passed by the deleteProduct method.
+   * @throws ClassNotFoundException — Thrown when an application tries to load in a class through
+   *                                its string name using: The forName method in class Class. The
+   *                                findSystemClass method in class ClassLoader . The loadClass
+   *                                method in class ClassLoader.
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
+   * @throws IOException            — Signals that an I/O exception of some sort has occurred. This
+   *                                class is the general class of exceptions produced by failed or
+   *                                interrupted I/O operations.
    */
   private void deleteProdWithID(String prodID)
       throws SQLException, ClassNotFoundException, IOException {

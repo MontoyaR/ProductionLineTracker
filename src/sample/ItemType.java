@@ -22,19 +22,9 @@ public enum ItemType {
   /**
    * Gets the label variable.
    *
-   * @return
+   * @return — label
    */
   public String getLabel() {
     return label;
-  }
-
-  /**
-   * Sets the label variable.
-   *
-   * @param label — label of the ItemType
-   * @return
-   */
-  public void setLabel(String label) {
-    this.label = label;
   }
 }

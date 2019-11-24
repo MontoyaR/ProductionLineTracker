@@ -1,12 +1,15 @@
 package sample;
 
 import com.sun.rowset.CachedRowSetImpl;
-
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
-import java.sql.*;
+
 
 /**
  * Database used to initialize a connection the the H2 database.
@@ -19,18 +22,24 @@ public class DBUtil {
   private static final String JDBC_DRIVER = "org.h2.Driver";
   private static final String DB_URL = "jdbc:h2:./res/HR";
 
-  static final String USER = "";
-  static String PASS = "";
+  private static final String USER = "";
+  private static String PASS = "";
 
   //Connection
   private static Connection conn = null;
 
   /**
-   * Establish connection to database
+   * Establish connection to database.
    *
-   * @throws ClassNotFoundException
-   * @throws SQLException
-   * @throws IOException
+   * @throws ClassNotFoundException — Thrown when an application tries to load in a class through
+   *                                its string name using: The forName method in class Class. The
+   *                                findSystemClass method in class ClassLoader . The loadClass
+   *                                method in class ClassLoader.
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
+   * @throws IOException            — Signals that an I/O exception of some sort has occurred. This
+   *                                class is the general class of exceptions produced by failed or
+   *                                interrupted I/O operations.
    */
   public static void dbConnect() throws ClassNotFoundException, SQLException, IOException {
     //Setting H2 JDBC Driver
@@ -42,15 +51,14 @@ public class DBUtil {
       throw e;
     }
 
-    //Get password from res/properties
-    Properties prop = new Properties();
-    prop.load(new FileInputStream("res/properties"));
-    PASS = prop.getProperty("password");
-
     System.out.println("\nOracle Driver Registered!\n");
 
     //Establish the H2 Connection using Connection String
     try {
+      //Get password Properties file
+      Properties prop = new Properties();
+      prop.load(new FileInputStream("res/properties"));
+      PASS = prop.getProperty("password");
       conn = DriverManager.getConnection(DB_URL, USER, PASS);
     } catch (SQLException e) {
       System.out.println("Connection Failed! Check output console" + e);
@@ -60,13 +68,14 @@ public class DBUtil {
   }
 
   /**
-   * Disconnect from the database
+   * Disconnect from the database.
    *
-   * @throws SQLException
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
    */
   public static void dbDisconnect() throws SQLException {
     try {
-      if (conn != null && !conn.isClosed() ){
+      if (conn != null && !conn.isClosed()) {
         conn.close();
       }
     } catch (SQLException e) {
@@ -76,13 +85,18 @@ public class DBUtil {
   }
 
   /**
-   * Database Execute Query Operation
+   * Database Execute Query Operation.
    *
-   * @param queryStmt
-   * @return
-   * @throws SQLException
-   * @throws ClassNotFoundException
-   * @throws IOException
+   * @param queryStmt — String variable used to execute query SQL operations.
+   * @throws ClassNotFoundException — Thrown when an application tries to load in a class through
+   *                                its string name using: The forName method in class Class. The
+   *                                findSystemClass method in class ClassLoader . The loadClass
+   *                                method in class ClassLoader.
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
+   * @throws IOException            — Signals that an I/O exception of some sort has occurred. This
+   *                                class is the general class of exceptions produced by failed or
+   *                                interrupted I/O operations.
    */
   public static ResultSet dbExecuteQuery(String queryStmt)
       throws SQLException, ClassNotFoundException, IOException {
@@ -126,11 +140,18 @@ public class DBUtil {
   }
 
   /**
-   * Database Execute Update (For Update/Insert/Delete) Operation
-   * @param sqlStmt
-   * @throws SQLException
-   * @throws ClassNotFoundException
-   * @throws IOException
+   * Database Execute Update (For Update/Insert/Delete) Operation.
+   *
+   * @param sqlStmt — String variable used to execute update SQL operations.
+   * @throws ClassNotFoundException — Thrown when an application tries to load in a class through
+   *                                its string name using: The forName method in class Class. The
+   *                                findSystemClass method in class ClassLoader . The loadClass
+   *                                method in class ClassLoader.
+   * @throws SQLException           — An exception that provides information on a database access
+   *                                error or other errors.
+   * @throws IOException            — Signals that an I/O exception of some sort has occurred. This
+   *                                class is the general class of exceptions produced by failed or
+   *                                interrupted I/O operations.
    */
   public static void dbExecuteUpdate(String sqlStmt)
       throws SQLException, ClassNotFoundException, IOException {
